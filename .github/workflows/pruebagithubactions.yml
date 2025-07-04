@@ -7,19 +7,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Mostrar evento del flujo de trabajo
-        run: echo "El flujo de trabajo ha sido ejecutado en el evento: ${{ github.event_name }}"
+        run: echo "El flujo de trabajo ha sido ejecutado en el evento ${{ github.event_name }}"
 
       - name: Mostrar sistema operativo del runner
         run: echo "El trabajo se está ejecutando en un servidor ${{ runner.os }} hospedado en GitHub"
 
       - name: Mostrar información de la rama y repositorio
-        run: echo "El nombre de la rama es: ${{ github.ref }} y tu repositorio es: ${{ github.repository }}"
+        run: echo "El nombre de la rama es ${{ github.ref }} y tu repositorio es ${{ github.repository }}"
 
       - name: Verificar el código del repositorio
         uses: actions/checkout@v4
 
       - name: Confirmar que el repositorio ha sido clonado
-        run: echo "El repositorio: ${{ github.repository }} ha sido colocado al runner."
+        run: echo "El repositorio ${{ github.repository }} ha sido colocado al runner."
 
       - name: Preparar verificación del código
         run: echo "El flujo de trabajo está listo para verificar el código en el runner."
@@ -28,4 +28,4 @@ jobs:
         run: ls ${{ github.workspace }}
 
       - name: Mostrar estado del trabajo
-        run: echo "El estado del trabajo es: ${{ job.status }}"
+        run: echo "El estado del trabajo es ${{ job.status }}"
