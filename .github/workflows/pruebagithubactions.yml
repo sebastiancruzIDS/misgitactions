@@ -3,7 +3,7 @@ name: GitHub Actions Practica
 on: [push]
 
 jobs:
-  Explorando-GitHub-Actions:
+  explorando_github_actions:
     runs-on: ubuntu-latest
     steps:
       - name: Mostrar evento del flujo de trabajo
@@ -13,9 +13,9 @@ jobs:
         run: echo "El trabajo se está ejecutando en un servidor ${{ runner.os }} hospedado en GitHub"
 
       - name: Mostrar información de la rama y repositorio
-        run: echo "El nombre de la rama es: ${{ github.ref }} y tu repositorio es: ${{ github.repository }}."
+        run: echo "El nombre de la rama es: ${{ github.ref }} y tu repositorio es: ${{ github.repository }}"
 
-      - name: Verifica el código del repositorio
+      - name: Verificar el código del repositorio
         uses: actions/checkout@v4
 
       - name: Confirmar que el repositorio ha sido clonado
@@ -28,4 +28,4 @@ jobs:
         run: ls ${{ github.workspace }}
 
       - name: Mostrar estado del trabajo
-        run: echo "El estado del trabajo es: ${{ job.status }}."
+        run: echo "El estado del trabajo es: ${{ job.status }}"
